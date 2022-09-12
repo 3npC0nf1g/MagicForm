@@ -57,7 +57,7 @@ function createHistoryCard(data) {
     lastNameTitle.innerHTML = "Last Name";
     emailTitle.innerHTML = "Email";
     phoneTitle.innerHTML = "Phone";
-    compagnyTitle.innerHTML = "Compagny";
+    compagnyTitle.innerHTML = "Company";
     addressTitle.innerHTML = "Address";
     button.innerHTML = "Delete";
 
