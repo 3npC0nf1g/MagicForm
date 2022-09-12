@@ -1,0 +1,193 @@
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+nav {
+    padding-bottom: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+h4 {
+    margin-top: 1rem;
+
+}
+
+html {
+    font-size: 12px;
+}
+
+body {
+    font-family: "Sitka Display";
+    line-height: 1.5;
+    max-height: 100vh;
+    font-size: 2rem;
+}
+
+header {
+    min-height: 10vh;
+    background-color: black;
+    margin-bottom: 2.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    display: block;
+    flex-wrap: wrap;
+    min-height: 80vh;
+
+}
+
+footer {
+    min-height: 10vh;
+    background-color: black;
+    margin-top: 2%;
+}
+
+nav, header {
+    padding-top: 2.25rem;
+    padding-bottom: 0.5rem;
+}
+
+nav {
+    display: inline;
+    width: 60.5rem;
+    font-size: 2rem;
+}
+
+#form-link, #history-link {
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+}
+
+#history-link {
+    margin-left: 0.8em;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+
+}
+
+#form {
+    display: block;
+}
+
+input {
+    height: 5rem;
+    width: 60rem;
+    border: 2px solid black;
+    border-radius: 0.45rem;
+    margin-bottom: 1.5rem;
+    font-weight: 10;
+    font-size: 1em;
+    padding-bottom: 0.25em;
+    padding-top: 0.25em;
+    font-family: "Sitka Display";
+}
+
+#div-button {
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+}
+
+#submit-button {
+    background-color: midnightblue;
+    font-size: 1.5rem;
+    padding: 0.5rem 1.2rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-family: "Sitka Display";
+}
+
+.submit-history-card {
+    margin: auto;
+    background-color: #ffffff;
+    width: 60.5rem;
+    height: 50.5rem;
+    border-radius: 1.7rem;
+    box-shadow: 0px 3px 6px black;
+    padding-left: 2.3rem;
+    margin-bottom: 2.2rem;
+    font-family: SansSerif;
+
+}
+
+.delete-button {
+    display: inline;
+    background-color: #921313;
+    margin-left: 41%;
+    font-size: 1.5rem;
+    padding: 0.6rem 2.5rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-family: "Sitka Display";
+    margin-top: 2.3rem;
+}
