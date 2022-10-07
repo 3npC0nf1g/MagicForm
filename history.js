@@ -8,7 +8,6 @@ const removeChilds = (parent) => {
 };
 document.addEventListener("delete-card", () => {
     showCards();
-    console.log("ici niveau 2");
 });
 
 function showCards() {
@@ -16,9 +15,8 @@ function showCards() {
     const cards = document.querySelector("#history__main");
     if (cards) {
         removeChilds(cards);
-        console.log("child removed");
     }
-    for (person of dbPersons) {
+    for (const person of dbPersons) {
         createHistoryCard(person);
     }
 }
@@ -28,10 +26,8 @@ function deleteCard() {
     deleteButton.forEach((currentButton) => {
         currentButton.addEventListener('click', (event) => {
             event.preventDefault();
-            console.log(event.currentTarget.dataset.id);
             let object = dbPersons.filter((person) => person.id !== event.currentTarget.dataset.id);
             localStorage.setItem(KEY, JSON.stringify(object));
-            console.log(object);
             document.dispatchEvent(new CustomEvent("delete-card"));
         });
     });
@@ -40,14 +36,13 @@ function deleteCard() {
 showCards();
 
 function createHistoryCard(data) {
-
     const div = document.createElement('div');
     div.className = "submit-history-card";
     const firstNameTitle = document.createElement('h4');
     const lastNameTitle = document.createElement('h4');
     const emailTitle = document.createElement('h4');
     const phoneTitle = document.createElement('h4');
-    const compagnyTitle = document.createElement('h4');
+    const companyTitle = document.createElement('h4');
     const addressTitle = document.createElement('h4');
     const button = document.createElement('button');
     button.className = "delete-button";
@@ -57,10 +52,9 @@ function createHistoryCard(data) {
     lastNameTitle.innerHTML = "Last Name";
     emailTitle.innerHTML = "Email";
     phoneTitle.innerHTML = "Phone";
-    compagnyTitle.innerHTML = "Company";
+    companyTitle.innerHTML = "Company";
     addressTitle.innerHTML = "Address";
     button.innerHTML = "Delete";
-
 
     const firstNameP = document.createElement('p');
     firstNameP.className = "card-first-name";
@@ -70,8 +64,8 @@ function createHistoryCard(data) {
     emailP.className = "card-email";
     const phoneP = document.createElement('p');
     phoneP.className = "card-phone";
-    const compagnyP = document.createElement('p');
-    compagnyP.className = "card-company";
+    const companyP = document.createElement('p');
+    companyP.className = "card-company";
     const addressP = document.createElement('p');
     addressP.className = "card-address";
 
@@ -80,7 +74,7 @@ function createHistoryCard(data) {
     emailP.innerHTML = data["email"];
     phoneP.innerHTML = data["phone"];
     addressP.innerHTML = data["address"];
-    compagnyP.innerHTML = data["company"];
+    companyP.innerHTML = data["company"];
 
     div.appendChild(firstNameTitle);
     div.appendChild(firstNameP);
@@ -90,8 +84,8 @@ function createHistoryCard(data) {
     div.appendChild(emailP);
     div.appendChild(phoneTitle);
     div.appendChild(phoneP);
-    div.appendChild(compagnyTitle);
-    div.appendChild(compagnyP);
+    div.appendChild(companyTitle);
+    div.appendChild(companyP);
     div.appendChild(addressTitle);
     div.appendChild(addressP);
     div.appendChild(button);
@@ -100,3 +94,7 @@ function createHistoryCard(data) {
     deleteCard();
 }
 
+
+ window.addEventListener('storage', () => {
+   showCards();
+});
